@@ -11,6 +11,12 @@ void print(int n)
 	std::cout << "Non-template version: " << n << std::endl;
 }
 
+template<class T>
+void show()
+{
+	std::cout << T() << std::endl;
+}
+
 int main()
 {
 	std::string str = "WHAT";
@@ -32,6 +38,8 @@ int main()
 	print(5);
 	print<>(5);
 	print(0.0004f);
+
+	show<double>();
 
 	return 0;
 }
