@@ -16,8 +16,12 @@ int main()
 		std::cout << circ.get(i) << std::endl;
 	}
 
-	Ring<std::string>::iterator it;
-	it.print();
+	// Ring<std::string>::iterator it;
+
+	for (Ring<std::string>::iterator it = circ.begin(); it != circ.begin(); it++)
+	{
+		std::cout << *it << std::endl;
+	}
 
 	return 0;
 }

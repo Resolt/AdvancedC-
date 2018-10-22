@@ -30,7 +30,7 @@ public:
 		}
 	}
 
-	T get(size_t i)
+	T &get(size_t i)
 	{
 		return this->buff[i];
 	}
@@ -38,6 +38,16 @@ public:
 	size_t getSize()
 	{
 		return this->buff.size();
+	}
+
+	iterator begin()
+	{
+		return interator(0, *this);
+	}
+
+	iterator end()
+	{
+		return iterator(this->buzz.size(), *this);
 	}
 
 	void print()
@@ -54,10 +64,29 @@ public:
 template <typename T>
 class Ring<T>::iterator
 {
+private:
+	size_t pos;
+	Ring &circ;
+
 public:
-	void print()
+	// iterator(){};
+	iterator(size_t &pos, Ring &circ) : pos(pos), circ(circ){};
+
+	// iterator(const iterator &other)
+	// {
+	// 	this->pos = other.pos;
+	// 	this->circ = other.circ;
+	// }
+
+	iterator &operator ++ (int)
 	{
-		std::cout << "Iter says hello: '" << T() << "'" << std::endl;
+		this->pos++;
+		return *this;
+	}
+
+	T &operator *()
+	{
+		return this->circ.get(this->pos);
 	}
 };
 
