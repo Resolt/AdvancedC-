@@ -17,6 +17,8 @@ public:
 		this->buff.resize(size);
 	}
 
+	class iterator;
+
 	void add(T obj)
 	{
 		this->buff[this->point] = obj;
@@ -42,12 +44,12 @@ public:
 
 	iterator begin()
 	{
-		return interator(0, *this);
+		return iterator(0, *this);
 	}
 
 	iterator end()
 	{
-		return iterator(this->buzz.size(), *this);
+		return iterator(this->buff.size(), *this);
 	}
 
 	void print()
@@ -58,7 +60,6 @@ public:
 		}
 	}
 
-	class iterator;
 };
 
 template <typename T>
@@ -69,14 +70,7 @@ private:
 	Ring &circ;
 
 public:
-	// iterator(){};
-	iterator(size_t &pos, Ring &circ) : pos(pos), circ(circ){};
-
-	// iterator(const iterator &other)
-	// {
-	// 	this->pos = other.pos;
-	// 	this->circ = other.circ;
-	// }
+	iterator(size_t pos, Ring &circ) : pos(pos), circ(circ){};
 
 	iterator &operator ++ (int)
 	{
@@ -87,6 +81,16 @@ public:
 	T &operator *()
 	{
 		return this->circ.get(this->pos);
+	}
+
+	friend bool operator == (const iterator &iter1, const iterator &iter2)
+	{
+		return iter1.pos == iter2.pos && &(iter1.circ) == &(iter2.circ);
+	}
+
+	friend bool operator != (const iterator &iter1, const iterator &iter2)
+	{
+		return iter1.pos != iter2.pos || &(iter1.circ) != &(iter2.circ);
 	}
 };
 
