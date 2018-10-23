@@ -72,6 +72,12 @@ private:
 public:
 	iterator(size_t pos, Ring &circ) : pos(pos), circ(circ){};
 
+	iterator &operator ++ ()
+	{
+		this->pos++;
+		return *this;
+	}
+
 	iterator &operator ++ (int)
 	{
 		this->pos++;

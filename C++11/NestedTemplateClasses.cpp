@@ -16,9 +16,14 @@ int main()
 	// 	std::cout << circ.get(i) << std::endl;
 	// }
 
-	for (Ring<std::string>::iterator it = circ.begin(); it != circ.end(); it++)
+	// for (Ring<std::string>::iterator it = circ.begin(); it != circ.end(); it++)
+	// {
+	// 	std::cout << *it << std::endl;
+	// }
+
+	for(auto &item : circ)
 	{
-		std::cout << *it << std::endl;
+		std::cout << item << std::endl;
 	}
 
 	return 0;
