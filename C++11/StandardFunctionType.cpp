@@ -58,7 +58,7 @@ int main()
 	run(check);
 	run(lambda);
 
-	// STANDARD FUNCTION EQUALS LAMBDA
+	// STANDARD FUNCTION IS COMPATIBLE WITH LAMBDA EXPRESSIONS
 	std::function<bool(int, int)> func = [](int a, int b) { return a == b; };
 	if(func(5, 5))
 	{
