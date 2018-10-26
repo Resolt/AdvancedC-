@@ -14,15 +14,16 @@ class Sister: public Parent
 
 int main()
 {
-	Parent parent;
-	Brother brother;
-	Sister sister;
-
+	// C STYLE CASTS VS C++ STYLE CASTS
 	float f = 3.000456;
 
 	std::cout << (double)f << " " << static_cast<double>(f) << std::endl;
 	std::cout << (int)f << " " << static_cast<int>(f) << std::endl;
 
+	// OBJECTS
+	Parent parent;
+	Brother brother;
+	Sister sister;
 
 	Parent *pp = &sister;
 	Parent sisterslicer = sister; // OBJECT SLICING FOR LULS
@@ -39,6 +40,10 @@ int main()
 	Parent *pp3 = dynamic_cast<Parent *>(sp);
 
 	std::cout << sp << " " << pp3 << std::endl;
+
+	//REINTERPRET
+	//reinterpret_cast ALLOWS FOR CASTING FROM ANYTHING TO ANYTHING - RAGNAROK WILL FOLLOW
+	Parent *ppp = reinterpret_cast<Parent *>(&f); // THIS WORKS - IT IS AWFUL
 
 	return 0;
 }
