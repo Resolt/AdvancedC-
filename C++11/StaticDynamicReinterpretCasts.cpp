@@ -2,6 +2,19 @@
 
 class Parent
 {
+private:
+	size_t pik;
+
+public:
+	Parent()
+	{
+		pik = 1234;
+	}
+
+	void print()
+	{
+		std::cout << "SERIOUSLY:\t" << pik << std::endl;
+	}
 };
 
 class Brother: public Parent
@@ -44,6 +57,7 @@ int main()
 	//REINTERPRET
 	//reinterpret_cast ALLOWS FOR CASTING FROM ANYTHING TO ANYTHING - RAGNAROK WILL FOLLOW
 	Parent *ppp = reinterpret_cast<Parent *>(&f); // THIS WORKS - IT IS AWFUL
+	(*ppp).print();
 
 	return 0;
 }
