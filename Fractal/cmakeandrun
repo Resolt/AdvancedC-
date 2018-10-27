@@ -1,0 +1,26 @@
+#!/bin/bash
+
+cd build
+rm -r CMakeFiles CMakeCache.txt Makefile
+
+cmake .
+CMAKERETURN=$?
+
+echo "$STR"
+echo "CMake return code: $CMAKERETURN"
+
+if [ $CMAKERETURN -eq 0 ] || [ $CMAKERETURN -eq 1 ]
+then
+	make
+	MAKERETURN=$?
+
+	echo "$STR"
+	echo "Make return code: $MAKERETURN"
+
+	if [ $MAKERETURN -eq 0 ]
+	then
+		echo "$STR"
+		cd ..
+		./bin/fract
+	fi
+fi
