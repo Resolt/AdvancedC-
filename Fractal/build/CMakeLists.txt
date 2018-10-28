@@ -14,6 +14,7 @@ add_executable(${PROJECT_NAME}
 	../src/main.cpp
 	../src/BitMap.cpp
 	../src/Mandelbrot.cpp
+	../src/Fractal.cpp
 )
 
 link_directories(
