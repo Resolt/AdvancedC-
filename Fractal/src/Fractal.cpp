@@ -78,7 +78,7 @@ void Fractal::drawFractal()
 					hue += (double)histogram[i] / histSum;
 				}
 
-				green = pow(255, hue);
+				red = pow(255, hue);
 			}
 
 			BM.setPixel(x, y, red, green, blue);
@@ -86,4 +86,4 @@ void Fractal::drawFractal()
 	}
 }
 
-}
+} // namespace fract

@@ -83,6 +83,7 @@ bool BitMap::write(const std::string &fileName)
 		return false;
 	}
 
+
 	// WRITE THE DATA TO FILE - REINTERPRET CASTS ARE STILL VERY DANGEROUS BUT IN THIS CASE IT SUITS THE PURPOSE
 	file.write(reinterpret_cast<const char *>(&fileHeader), sizeof(BitMapFileHeader));
 	file.write(reinterpret_cast<const char *>(&infoHeader), sizeof(BitMapInfoHeader));

@@ -27,4 +27,4 @@ uint16_t Mandel::getIterations(double x, double y)
 	return iters;
 }
 
-}
+} // namespace fract

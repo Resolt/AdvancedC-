@@ -18,6 +18,6 @@ public:
 	static const uint16_t MAX_IT = 1000;
 };
 
-}
+} // namespace fract
 
 #endif

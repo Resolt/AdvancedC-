@@ -1,8 +1,6 @@
 #ifndef BITMAPFILE_HPP_
 #define BITMAPFILE_HPP_
 
-#include <iostream>
-#include <cstdint>
 #include <memory>
 #include <fstream>
 #include <math.h>
@@ -73,6 +71,6 @@ struct BitMapInfoHeader
 	uint32_t importantColors{0};
 };
 
-}
+} // namespace fract
 
 #endif
