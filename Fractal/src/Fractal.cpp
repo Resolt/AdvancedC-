@@ -8,8 +8,8 @@ Fractal::Fractal(std::string &fileName, uint16_t width, uint16_t height)
 	BM = BitMap(width, height);
 	mand = Mandel();
 	ZoomList zoomList(width, height);
-	zoomList.add(width / 2, height / 2, 4.0 / width);
-	zoomList.add(width / 2, height / 2, 4.0 / width);
+	// zoomList.add(width / 2, height / 2, 4.0 / width);
+	// zoomList.add(width / 2, height / 2, 4.0 / width);
 	drawFractal();
 	BM.write(fileName);
 }
